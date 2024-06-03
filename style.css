@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+  background-color: rgb(223, 247, 255);
+  font-family: monospace;
+}
+section {
+  max-width: 650px;
+}
+
+.card {
+  display: flex;
+  height: 170px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 650px;
+  max-width: 700px;
+  position: relative;
+}
+.card::before {
+  position: absolute;
+  content: "";
+  display: flex;
+  justify-content: center;
+  background-color: rgb(238, 238, 200);
+  height: 210px;
+  width: 550px;
+  border-radius: 50px;
+  z-index: -1;
+}
+.each {
+  display: flex;
+  gap: 2rem;
+}
+.one {
+  text-align: center;
+}
+span {
+  cursor: pointer;
+  border: 0.4px solid;
+  border-radius: 50%;
+  padding: 6px 10px;
+}
+h4 {
+  margin-top: 10px;
+}
+.active {
+  background-color: darkblue;
+  color: white;
+  border: none;
+  transition: background 0.3s ease-in;
+}
+.bar {
+  height: 10px;
+  width: 86%;
+  position: absolute;
+  margin-top: 80px;
+  border-radius: 50px;
+  background-color: rgb(230, 230, 230);
+}
+.bar::after {
+  content: "";
+  position: absolute;
+  background-color: darkblue;
+  width: 90%;
+  height: 100%;
+  border-radius: 50px;
+}
+@media (max-width: 691px) {
+  .each {
+    flex-direction: column;
+  }
+  .card {
+    height: 500px;
+    width: 300px;
+    transition: height 0.3s ease-in-out;
+  }
+  .card::before {
+    display: none;
+  }
+  .bar {
+    margin-top: 400px;
+  }
+}
